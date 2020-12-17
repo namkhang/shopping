@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trò chuyện</title>
+    <script>
+           var message = {
+                "chào":"Chào bạn",
+                "bạn tên gì":"Khang Coder",
+                "bạn bao nhiêu tuổi":"21",
+                "bạn làm nghề gì":"Sinh viên nghèo",
+                "bạn sống ở đâu":"Đà Nẵng",
+                "tạm biệt":"Hẹn gặp lại bạn <3"
+            }
+        function talk()
+        {
+            var chat = document.getElementById("userchat").value;
+            document.getElementById("userchat").value= "";
+            document.getElementById("chatbox").innerHTML += "Tôi : " + chat+ "<br />";
+            if(chat in message)
+            {
+                document.getElementById("chatbox").innerHTML += "Máy :"+ message[chat]+ "<br />";
+            }
+            else{
+                document.getElementById("chatbox").innerHTML += "Máy :"+ "Không hiểu nói gì :(" + "<br />";
+            }
+
+        }
+    </script>
+    
+
+  </head>
+  <body>
+    <h1>ChatBox</h1>
+    <a href="/users">Quay lại </a>
+    <br />
+    <p id="chatbox"></p>
+  <input type="text" id="userchat" onkeydown="if(event.keyCode== 13){talk()}">
+    
+  
+  </body>
+</html>

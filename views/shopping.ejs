@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shopping</title>
+    <link
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+    <form action="/goshopping" method="POST">
+    <p><%-username%></p>
+    <p>
+        Số điện thoại
+    </p>
+    <input type="text" name="phone">
+    <p>
+        Địa chỉ
+    </p>
+    <input type="text" name="address">
+
+    <div class="cart-items-shopping">
+        <% giohang.forEach((i)=>{%>
+         <div class="cart-row-shopping">
+             <div class="cart-item cart-column">
+                 <img class="cart-item-image"
+                     src=<%-i.image%>
+                     width="100" height="100">
+                 <span class="cart-item-title"><%-i.tensanpham%></span>
+                 <input type="text" name="TenSanPham" value="<%-i.tensanpham%>" style="display: none;">
+             </div>
+             <span class="cart-price-shopping"><%-i.gia%></span>
+             <div class="cart-quantity cart-column ">
+                 <input
+                     class="cart-quantity-input-shopping"
+                     type="number" name="count" value="<%-i.soluong%>">
+             </div>
+         </div>
+         <%})%>
+         <div class="cart-total">
+            <strong class="cart-total-title">Tổng
+                Cộng:</strong>
+            <span style="font-size: xx-large;" class="cart-total-price-span-shopping"></span>
+        </div>
+    </div>
+         <input type="text"  name="totalprice" value="" class="cart-total-price-shopping" style="display: none;" ></input>
+         <button type="submit" class="btn btn-primary shopping">Thanh Toán</button>
+        </form>
+</body>
+<script type="text/javascript" src="./shopping.js"></script>
+</html>

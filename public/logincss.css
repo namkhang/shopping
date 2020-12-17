@@ -1,0 +1,76 @@
+body{
+    background-image:url(thiennhien.jpg);
+}
+.login {
+    width: 350p;
+    height: 420px;
+    background: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding: 80px 40px;
+    box-sizing: border-box;
+
+}
+
+h2 {
+    margin: 0;
+    padding: 0 0 20px;
+    color: brown;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.login p {
+    padding: 0;
+    margin: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.login input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login input [type="text"],
+.login input [type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.login input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    color: brown;
+    font-size: 16px;
+    background: (255, 38, 126);
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.login input[type="submit"]:hover {
+    background: #efed40;
+    color: #262626;
+}
+
+.login a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+a{
+    text-decoration: none ;
+}

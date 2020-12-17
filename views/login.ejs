@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <link rel="stylesheet" href="logincss.css">
+</head>
+
+<body>
+    <div class="login" >
+        <h2>Đăng nhập </h2>
+        <form action="/gologin" method="POST">
+                <p  style="font-size:medium">Username</p>
+                <input type="text"  placeholder="Usernmae" name="username">
+                <p style="font-size:medium">Passwork</p>
+                <input type="password"  placeholder="Mật khẩu" name="password">
+            <input btn btn--primary type="submit" name="submit" value="Đăng nhập">
+            <a href="/register" >Đăng ký</a>
+            <a href="/auth/face" >Đăng nhập bằng facebook</a>
+            <a href="/auth/gmail" >Đăng nhập bằng gmail</a>
+
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

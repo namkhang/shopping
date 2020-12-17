@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User</title>
+    <link rel='stylesheet' href="css/users.css"/>
+    <script src="https://khangnguyenshop.herokuapp.com/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h2>Tìm kiếm</h2>
+    <form action="/users/search" method="POST">
+      <input type="text" name="username">
+      <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+    <a href="/users/create" >Thêm người dùng</a>
+    <a href="/users/remove" >Xóa người dùng</a>
+
+    <h1>Danh sách người dùng :</h1>
+     <%users.forEach((i)=>{%>
+       <li>Tên là :<%-i.name%> ,Tuổi là : <%-i.age%> ,Số điện thoại : <%-i.phone%></li>
+       <li class="rate" idli="<%-i._id%>">Đánh giá 5 sao : <%-i.rate5%>  , Đánh giá 1 sao : <%-i.rate1%> </li>
+       <img src="<%-i.avatar%>" alt="" width="200px" height="250px">
+       <li> 
+        <form action="/users/rate" method="POST">
+          <input type="text" name="id" value="<%-i._id%>" style="display: none;">
+          <input type="button" idname="<%-i._id%>" class="btnrate5" value="Rate 5">
+        </form>
+       </li>
+       <li>
+         <form action="/users/rate" method="POST">
+          <input type="text" name="id" value="<%-i._id%>" style="display: none;">
+          <input type="button" idname="<%-i._id%>"  class="btnrate1" value="Rate 1">
+        </form>
+       </li>
+       <li>
+        <% comment.forEach((i)=>{%>
+           <h4><%-i.ten%></h4>
+           <p><%-i.content%></p>
+         <%})%>
+       </li>
+   
+     <%})%>
+     <form action="/users/nhanxet" method="POST">
+     <textarea name="nhanxet" ></textarea>
+     <input type="submit" value="nhan xet">
+    </form>
+
+  </body>
+  <script src="jsusers.js"></script>
+</html>

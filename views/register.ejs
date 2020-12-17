@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="logincss.css" />
+    <!--<script>
+        function validation(){
+            var username = document.getElementById("username").value;
+        var pass = document.getElementById("pass").value;
+        var repass = document.getElementById("repass").value;
+        var err = document.getElementById("err");
+        var text = "";
+        if(pass != repass){
+            text = "2 mật khẩu phải giống nhau"
+            err.innerHTML =  text;
+            return false;
+        }
+        else if(username  == "" && pass == ""){
+        
+           text = "Vui lòng không để trống !!!";
+           err.innerHTML = text;
+           return false;
+           
+        }
+        else{
+      
+            return true;
+        }
+    }
+
+    </script>-->
+
+</head>
+
+<body>
+    <div class="login">
+        <h2>Đăng ký </h2>
+        <div id="err" style="color: white;">
+       <% error.forEach((i)=>{%>
+           <li><%-i%></li>
+      <%})%>
+    </div>
+
+        <form action="/register" method="POST" /*onsubmit="return validation()"*/>
+            <p>Email</p>
+            <input type="text" placeholder="Mời nhập email" name="email" id="username">
+            <p>Passwork</p>
+            <input type="password" id="pass" placeholder="nhập passwork" name="password">
+            <p> Nhập lại Passwork</p>
+            <input type="password" id="repass" placeholder="nhập lại passwork" name="repassword">
+            <input class="btn btn--primary" type="submit" name="submit" value="Đăng  ký">
+            <a href="/">Đăng nhập</a>
+
+
+        </form>
+        
+
+    </div>
+
+</body>
+
+</html>
